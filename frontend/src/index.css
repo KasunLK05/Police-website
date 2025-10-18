@@ -1,0 +1,42 @@
+@import "tailwindcss";
+@import "leaflet/dist/leaflet.css";
+
+/* Global light theme */
+body {
+  background-color: #f9fafb; /* Tailwind gray-50 */
+  color: #111827; /* Tailwind gray-900 */
+}
+
+a {
+  color: #2563eb; /* Tailwind blue-600 */
+  transition: color 0.2s ease-in-out;
+}
+
+a:hover {
+  color: #1e40af; /* Tailwind blue-800 */
+}
+
+body, a {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Fix Leaflet map overlapping other UI elements */
+.leaflet-container {
+  z-index: 0 !important;
+}
+
+.leaflet-pane,
+.leaflet-map-pane,
+.leaflet-tile-pane,
+.leaflet-marker-pane,
+.leaflet-shadow-pane,
+.leaflet-overlay-pane,
+.leaflet-tooltip-pane,
+.leaflet-popup-pane {
+  z-index: 0 !important;
+}
+
+.leaflet-top,
+.leaflet-bottom {
+  z-index: 400 !important; /* Keep zoom buttons clickable */
+}
